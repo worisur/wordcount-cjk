@@ -18,9 +18,14 @@ export class WordCountController {
     constructor(configuration: WorkspaceConfiguration, wordCounter: WordCounter) {
         this._isActive = false;
         this._wordCounter = wordCounter;
-        this._statusBarTextTemplate = configuration.get<string>("statusBarTextTemplate");
-        this._statusBarTooltipTemplate = configuration.get<string>("statusBarTooltipTemplate").replace(/\\n/g, '\n').replace(/\\t/g, '\t');
-        this._activateLanguages = configuration.get<Array<string>>("activateLanguages");
+        this._statusBarTextTemplate = configuration.get<string>("statusBarTextTemplate") || "zz";
+        this._statusBarTooltipTemplate = (configuration.get<string>("statusBarTooltipTemplate") || "")
+            .replace(/\\n/g, '\n')
+            .replace(/\\t/g, '\t');
+        this._activateLanguages = configuration.get<Array<string>>("activateLanguages") || [];
+        // this._statusBarTextTemplate = configuration.get<string>("statusBarTextTemplate");
+        // this._statusBarTooltipTemplate = configuration.get<string>("statusBarTooltipTemplate").replace(/\\n/g, '\n').replace(/\\t/g, '\t');
+        // this._activateLanguages = configuration.get<Array<string>>("activateLanguages");
 
         this._statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left);
 

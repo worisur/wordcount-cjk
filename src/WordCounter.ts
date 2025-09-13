@@ -24,9 +24,12 @@ export class WordCounter {
     private readonly _regexFormatReplace: RegExp;
 
     constructor(configuration: WorkspaceConfiguration) {
-        this._regexWordChar = new RegExp(configuration.get<string>("regexWordChar"));
-        this._regexASCIIChar = new RegExp(configuration.get<string>("regexASCIIChar"));
-        this._regexWhitespaceChar = new RegExp(configuration.get<string>("regexWhitespaceChar"));
+        // this._regexWordChar = new RegExp(configuration.get<string>("regexWordChar"));
+        // this._regexASCIIChar = new RegExp(configuration.get<string>("regexASCIIChar"));
+        // this._regexWhitespaceChar = new RegExp(configuration.get<string>("regexWhitespaceChar"));
+        this._regexWordChar = new RegExp(configuration.get<string>("regexWordChar") || "\\w");
+        this._regexASCIIChar = new RegExp(configuration.get<string>("regexASCIIChar") || "[\\x00-\\x7F]");
+        this._regexWhitespaceChar = new RegExp(configuration.get<string>("regexWhitespaceChar") || "\\s");
         this._regexFormatReplace = /\$\{([^}]+)\}/g;
         this._replaceFuncs = {};
     }
