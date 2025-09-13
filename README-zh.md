@@ -1,4 +1,6 @@
-# vscode-wordcount-cjk
+# wordcount-cjk
+
+原作者没有写vscodium的版本，我这里复刻尝试发布到 open vsx，其他内容暂时不做修改。
 
 VSCode 的 word count 都是老外写的，没有一个能统计中文字数的，所以我就写了一个。
 
