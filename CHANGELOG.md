@@ -3,6 +3,10 @@ All notable changes to the "wordcount-cjk" extension will be documented in this 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.3.2] - 2025-09-13
+### Enhancement
+- 添加 vscodium 支持，修复部分编译错误。
+
 ## [1.2.0] - 2018-06-01
 ### Enhancement
 - Add `activateLanguages` options.
